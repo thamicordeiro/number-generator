@@ -6,11 +6,18 @@
 
   <title>Sorteador de números</title>
   
+  <a href="/" class="logo">
+  <img src="assets/logo.svg" alt="NUMBERS">
+  <span>NUMBERS</span>
+  </a>
   <link rel="stylesheet" href="styles/index.css">
 
 </head>
 
+
 <body>
+
+  
 
 <main class="container">
 
@@ -28,27 +35,39 @@
 </section>
 </div>
 
-<div class="content from">
+<section class="content form">
 <h2>Quero sortear:</h2>
 <p>defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela. É rápido e fácil!</p>
 <form>
+<div class="fields">
 <div class="number-field">
 <label for="numero">Números</label> 
-<input type="number" name="" id="numero">
+<input type="number"  id="numero" name="">
 </div> 
 
-<div class="field-min">
- <label for="inicio">De</label>
- <input type="number" name="" id="inicio">
+<div class="number-field">
+ <label for="minimo">De</label>
+ <input type="number" id="minimo" name="minimo">
 </div>
 
-<div class="field-max">
+<div class="number-field">
  <label for="maximo">De</label> 
- <input type="number" name="" id="maximo">
+ <input type="number"  id="maximo" name="maximo">
 </div>
 
-</form>
+<div class="option-toggle">
+<input type="checkbox" id="no-repeat" name="no-repeat">
+<label for="no-repeat">Não repetir número</label> 
 </div>
+</div>
+</form>
+
+<button class="btn btn-primary">
+<span>SORTEAR</span>
+<img src="assets/icons/icon-arrow-right.svg" alt="">
+</button>
+
+</section>
 </main>  
 
 <script src="script.js"></script>
