@@ -1,0 +1,41 @@
+header {
+display: grid;
+gap: 12px;
+}
+
+header .overline {
+font: var(--overline);
+color: var(--content-secondary);
+}
+
+h1 {
+  font: var(--h1);
+  color: var(--content-primary);
+  margin-bottom: 38px;
+}
+
+ section.info h2 {
+  font: var(--text-md);
+  color: var(--content-brand);
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+h2 img {
+  width: 20px;
+  height: 20px;
+}
+
+.help + .help {
+  margin-top: 38px;
+}
+
+.help p {
+  margin-inline: 28px;
+}
+
+

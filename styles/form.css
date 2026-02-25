@@ -1,0 +1,49 @@
+
+h2 {
+font: var(--label-md);
+color: var(--content-primary);
+}
+
+.fields {
+
+margin-top: 40px;
+display: grid;
+grid-template-columns: repeat(6, 1fr);
+gap: 12px;
+text-align: center;
+
+}
+
+
+label {
+font: var(--label-md);
+color: var(--content-secondary);
+}
+
+.number-field input {
+
+  background-color: var(--background-secondary);
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 8px;
+  width: 86px;
+  height:80px;
+  font: var(--h3);
+  color: var(--content-primary);
+  text-align: center;
+  margin-bottom: 20px;
+
+}
+
+
+
+input[type="checkbox"] {
+width: 18px;
+height: 18px;
+transform: scale(1.2);
+cursor: pointer;
+color: var(--gradient-background)
+
+
+}

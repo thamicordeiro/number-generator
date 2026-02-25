@@ -1,0 +1,17 @@
+button{
+  all: unset;
+  font: var(--label-md);
+  color: var(--content-primary);
+  background-color: var(--background-tertiary);
+  padding: .1rem .1rem;
+  width: 400px;
+  border-radius: .5rem;
+  cursor: pointer;
+  margin-top: 2.5rem;
+
+  
+  &.btn-primary {
+
+  }
+}
+

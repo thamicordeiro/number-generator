@@ -1,0 +1,13 @@
+.container {
+display: grid;
+grid-template-columns: 1fr 1fr;
+margin: auto;
+gap: 108px;
+
+background-color: var(--color-inverse);
+}
+
+p {
+font: var(--text-sm);
+color: var(--content-secondary);
+}
