@@ -14,11 +14,17 @@
 
  <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Sora:wght@100..800&display=swap" rel="stylesheet">
 
+ <a href="/" class="logo">
+  <img src="assets/logo.svg" alt="NUMBERS">
+  <span>NUMBERS</span>
+  </a>
+
 </head>
 
 
 <body>
   
+
 <main class="container">
 
 <section class="info">
@@ -62,10 +68,12 @@
 </div>
 </div>
 
-<div class="option-toggle">
-<input type="checkbox" id="no-repeat" name="no-repeat">
-<label for="no-repeat">Não repetir número</label> 
-</div>
+
+<label class="toggle">
+  <input type="checkbox" id="no-repeat">
+  <span class="slider"></span>
+  Não repetir número
+</label>
 
 </form>
 
@@ -76,10 +84,7 @@
 
 </section>
 
-<a href="/" class="logo">
-  <img src="assets/logo.svg" alt="NUMBERS">
-  <span>NUMBERS</span>
-  </a>
+
 </main>  
 
 <script src="script.js"></script>

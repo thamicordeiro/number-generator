@@ -1,17 +1,26 @@
-button{
-  all: unset;
+button {
+
   font: var(--label-md);
   color: var(--content-primary);
   background-color: var(--background-tertiary);
-  padding: .1rem .1rem;
+  padding: .1rem 1.5rem;
   width: 400px;
   border-radius: .5rem;
+  border: 2px solid transparent;
+  transition: 0.2s;
   cursor: pointer;
   margin-top: 2.5rem;
 
-  
-  &.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
 
-  }
+ }
+
+
+ button:hover {
+  background:
+    linear-gradient(var(--background-tertiary), var(--background-tertiary)) padding-box,
+    var(--gradient-border) border-box;
 }
-

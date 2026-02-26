@@ -1,8 +1,23 @@
+body {
+background-image: url(/assets/img/background.png),  
+linear-gradient( 
+rgba(0, 0, 0, 0.98), 
+rgba(0, 0, 0, 0.90) ) ;
+
+min-height: 100vh;
+display: flex;
+justify-content: center; 
+align-items: center;
+}
+
 .container {
 display: grid;
 grid-template-columns: 1fr 1fr;
-margin: auto;
 gap: 108px;
+margin: auto;
+width: min(1200px, 100%);
+padding-inline: 24px;
+
 
 background-color: var(--color-inverse);
 }
@@ -10,4 +25,14 @@ background-color: var(--color-inverse);
 p {
 font: var(--text-sm);
 color: var(--content-secondary);
+}
+
+.logo {
+position: fixed;
+left: 20px;
+top: 20px;
+text-decoration: none;
+color: inherit;
+color: var(--content-primary);
+font: var(--h3);
 }
