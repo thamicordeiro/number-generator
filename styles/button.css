@@ -3,38 +3,85 @@ button {
   font: var(--label-md);
   color: var(--content-primary);
   background-color: var(--background-tertiary);
-  padding: .1rem 1.5rem;
+ 
+  height: 56px;
   width: 400px;
+
   border-radius: .5rem;
-  border: 2px solid transparent;
-  transition: 0.2s;
+  border: none;
   cursor: pointer;
   margin-top: 2.5rem;
 
-  position: relative;
-  overflow: hidden;
-
+  
   display: flex;
   align-items: center;
   justify-content: center;
   gap: .5rem;
 
+  position: relative;
+
  }
 
-button:hover {
-  background:
-    linear-gradient(var(--background-tertiary), var(--background-tertiary)) padding-box,
-    var(--gradient-border) border-box;
+button::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
 
+  border: 2px solid transparent;
   background-size: 300%;
-  animation: borderMove 0.7s linear;
+
+}
+
+button:hover::before {
+  
+background:
+linear-gradient(var(--background-tertiary), var(--background-tertiary)) padding-box,
+var(--gradient-border) border-box;
+
+animation: borderMove 2s linear;
+animation-fill-mode: forwards;
+
 }
 
 @keyframes borderMove {
-  from {
-    background-position: 0% 50%;
+
+  0% {
+    opacity: 1;
+    background-position: 0%;
   }
-  to {
-    background-position: 300% 50%;
+
+  80% {
+    opacity: 1;
   }
+
+  100% {
+    opacity: 0;
+    background-position: 200%;
+  }
+
+}
+
+button span {
+  position: relative;
+  z-index: 1;
+}
+
+button:hover img {
+  animation: arrowMove 2s;
+}
+
+@keyframes arrowMove {
+ 0% {
+  transform: translateX(0);
+ }
+
+ 50% {
+  transform: translateX(10px);
+ }
+
+ 100% {
+  transform: translateX(0);
+ }
+
 }

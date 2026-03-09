@@ -27,10 +27,19 @@ font: var(--text-sm);
 color: var(--content-secondary);
 }
 
+
+
 .logo {
-position: fixed;
-left: 20px;
-top: 20px;
+
+margin: auto;
+width: min(1200px, 100%);
+padding-inline: 24px;
+position: absolute;
+display: flex;
+align-items: center;
+gap: 12px;
+top: 40px;
+
 text-decoration: none;
 color: inherit;
 color: var(--content-primary);
