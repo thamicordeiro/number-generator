@@ -13,13 +13,31 @@ align-items: center;
 .container {
 display: grid;
 grid-template-columns: 1fr 1fr;
-gap: 108px;
+grid-template-areas: 
+" info  form"
+"questions  form";
+column-gap: 108px;
+row-gap: 38px;
 margin: auto;
 width: min(1200px, 100%);
 padding-inline: 24px;
 
 
 background-color: var(--color-inverse);
+}
+
+.info {
+  grid-area: info;
+}
+
+.form {
+  grid-area: form;
+}
+
+
+
+.questions {
+  grid-area: questions;
 }
 
 p {
@@ -44,4 +62,16 @@ text-decoration: none;
 color: inherit;
 color: var(--content-primary);
 font: var(--h3);
+}
+
+@media (max-width: 1024px) {
+
+  .container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 120px;
+  }
+ .logo{
+justify-content: center;
+}
 }
