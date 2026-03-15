@@ -85,3 +85,10 @@ button:hover img {
  }
 
 }
+
+@media (max-width: 1024px) {
+button {
+  width: 100%;
+  margin-bottom: 45px;
+}
+}

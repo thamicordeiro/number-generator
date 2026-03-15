@@ -4,6 +4,8 @@
   box-sizing: border-box;
 }
 
+
+
 :root {
 
 --content-primary: #FFFFFF;
@@ -29,6 +31,7 @@
 --gradient-background: linear-gradient(#D586E0 0%, #91A1FA 98.93%);
 --gradient-content:linear-gradient(#C7C9CC 0%, #3D3D3D 100%);
 
+--font-family: "inter", sans-serif;
 --font-title: "Sora", sans-serif; 
 --font-text: "Roboto Flex", sans-serif;
 --font-mono: "Roboto Mono", monospace;
@@ -39,10 +42,12 @@
 
 --overline: 700 16px/150% var(--font-mono);
 
+--toggle-sm: 500 12px/150% var(--font-family);
 --text-lg: 500 16px/150% var(--font-text);
 --text-md: 500 14px/150% var(--font-text);
 --text-sm: 500 12px/150% var(--font-text);
 
 --label-md: 700 20px/150% var(--font-text);
 --label-sm: 700 16px/150% var(--font-text);
+--label-lg: 700 20px/150% var(--font-text);
 }

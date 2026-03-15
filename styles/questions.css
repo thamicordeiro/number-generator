@@ -6,8 +6,15 @@ font: var(--text-md);
 
 .questions p {
  margin-inline: 28px;
+ font: var(--text-sm);
 }
 
 .questions + .questions {
   margin-top: 32px;
+}
+
+@media (max-width: 1064px) {
+ .faq {
+  padding-bottom: 40px;
+ }
 }

@@ -20,7 +20,8 @@ column-gap: 108px;
 row-gap: 38px;
 margin: auto;
 width: min(1200px, 100%);
-padding-inline: 24px;
+max-width: 100%;
+
 
 
 background-color: var(--color-inverse);
@@ -49,29 +50,42 @@ color: var(--content-secondary);
 
 .logo {
 
-margin: auto;
+margin-top: 30px;
 width: min(1200px, 100%);
-padding-inline: 24px;
 position: absolute;
 display: flex;
 align-items: center;
 gap: 12px;
 top: 40px;
-
+  
 text-decoration: none;
 color: inherit;
 color: var(--content-primary);
 font: var(--h3);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
 
   .container {
   display: flex;
   flex-direction: column;
   padding-top: 120px;
+  padding-inline: 28px;
+  margin-left: 5px 5px;
+  width: 100%;
+ 
   }
+  
  .logo{
+margin: auto;
+display: flex;
 justify-content: center;
+}
+}
+
+@media (min-width: 768px) {
+.logo{
+
+ margin-top: 40px;
 }
 }
