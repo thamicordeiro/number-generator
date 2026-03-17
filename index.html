@@ -36,6 +36,7 @@
 </section>
 
 <section class="content-form">
+
 <h2>QUERO SORTEAR:</h2>
 <p>Defina o intervalo e a quantidade de números, clique em "Sortear"
 e veja os resultados na tela. É rápido e fácil!</p>
@@ -48,28 +49,36 @@ e veja os resultados na tela. É rápido e fácil!</p>
 
 <div class="number-field">
  <label for="minimo">DE</label>
- <input type="number" value="1"  id="minimo" name="minimo" >
+ <input type="number" value="1" id="minimo" name="minimo" >
 </div>
 
 <div class="number-field">
  <label for="maximo">DE</label> 
  <input type="number" value="100" id="maximo" name="maximo" >
 </div>
+
 </div>
 
+<section class="resultado">
+<h3>RESULTADO DO SORTEIO</h3>
+<div id="resultado" aria-live="polite"></div>
+</section>
+
+<p id="mensagem" class="message"></p>
 
 <label class="toggle">
   <input type="checkbox" id="no-repeat">
   <span class="slider"></span>
   Não repetir número
 </label>
-
-</form>
-
+ 
 <button class="btn btn-primary">
 <span>SORTEAR</span>
 <img src="assets/icons/icon-arrow-right.svg" alt="">
 </button>
+
+</form>
+
 
 </section>
 
@@ -80,6 +89,8 @@ e veja os resultados na tela. É rápido e fácil!</p>
 <p>O sorteador utiliza um algoritmo de geração aleatória para criar números dentro do intervalo especificado pelo usuário.</p>
 </section>
 
+
+
 <section class="questions">
 <h2>
 <img src="assets/icons/icon-help.svg" alt="">Posso escolher o intervalo dos números?</h2>
@@ -87,7 +98,7 @@ e veja os resultados na tela. É rápido e fácil!</p>
 </section>
 </div>
 
-</main>  
+
 
 
 <script src="script.js"></script>

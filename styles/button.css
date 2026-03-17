@@ -5,8 +5,7 @@ button {
   background-color: var(--background-tertiary);
  
   height: 56px;
-  width: 400px;
-
+  width: 100%;
   border-radius: .5rem;
   border: none;
   cursor: pointer;
@@ -86,7 +85,7 @@ button:hover img {
 
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
 button {
   width: 100%;
   margin-bottom: 45px;
