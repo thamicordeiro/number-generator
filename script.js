@@ -1,7 +1,7 @@
-const numero = document.getElementById("numero")
-const minimo = document.getElementById("minimo")
-const maximo = document.getElementById("maximo")
-const message = document.getElementById("mensagem")
+const number = document.getElementById("number")
+const min = document.getElementById("min")
+const max = document.getElementById("max")
+const message = document.getElementById("message")
 
 const form = document.querySelector("form")
 const button = document.querySelector(".btn-primary")
@@ -9,16 +9,30 @@ const button = document.querySelector(".btn-primary")
 form.addEventListener ("submit", function (event)  {
   event.preventDefault() 
 
+const amount = Number(number.value)
+const minValue = Number(number.value)
+const maxValue = Number(number.value)
+const noRepeat = document.getElementById("no-repeat")
 
-if (!numero.value || !minimo.value || !maximo.value) {
+
+ if (!number.value || !min.value || !max.value) {
   
-  message.textContent = "Preencha todos os campos"
+  message.textContent = "Preencha todos os campos."
   return
 }
- 
-if (Number(maximo.value) <= Number(minimo.value)) {
-  message.textContent = "Digite um valor maior que o mínimo"
+
+if (maxValue <= minValue) {
+  message.textContent = "Digite um valor maior que o mínimo."
   return
+}
+
+if ( amount <=0 ) {
+  message.textConteto = "A quantidade deve ser maior que zero."
+}
+
+if (noRepeat && amount > totalAvailable) {
+  message.textContent = "A quantidade não pode ser maior que o intervalo.";
+  return;
 }
 
 })
