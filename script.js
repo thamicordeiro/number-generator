@@ -6,14 +6,43 @@ const message = document.getElementById("message")
 const form = document.querySelector("form")
 const button = document.querySelector(".btn-primary")
 
+function withRepetition (qtd, min, max) {
+
+  const result = []
+
+  for (let i = 0; i < qtd; i++) {
+    const number = Math.floor(Math.random() * (max - min + 1)) + min
+    result.push(number)
+  }
+  return result
+}
+
+function noRepetition (qtd, min, max) {
+  const result = []
+
+  while (result.length < qtd) {
+const number = Math.floor(Math.random() * (max - min + 1)) + min
+
+if (!result.includes(number)) {
+  result.push(number)
+ }
+} 
+
+ return result
+
+}
+
 form.addEventListener ("submit", function (event)  {
   event.preventDefault() 
 
 const amount = Number(number.value)
-const minValue = Number(number.value)
-const maxValue = Number(number.value)
+const minValue = Number(min.value)
+const maxValue = Number(max.value)
 const noRepeat = document.getElementById("no-repeat")
 
+const totalAvailable = maxValue - minValue + 1
+
+message.textContent = ""
 
  if (!number.value || !min.value || !max.value) {
   
@@ -27,12 +56,33 @@ if (maxValue <= minValue) {
 }
 
 if ( amount <=0 ) {
-  message.textConteto = "A quantidade deve ser maior que zero."
+  message.textContent = "A quantidade deve ser maior que zero."
+  return
 }
 
-if (noRepeat && amount > totalAvailable) {
+
+if (noRepeat.checked && amount > totalAvailable) {
   message.textContent = "A quantidade não pode ser maior que o intervalo.";
   return;
 }
 
+ let numbers
+ if (noRepeat.checked) {
+  numbers = noRepetition(amount, minValue, maxValue)
+ } else {
+  numbers = withRepetition(amount, minValue, maxValue)
+ }
+ 
+const resultEl = document.getElementById("result")
+
+resultEl.textContent = ""
+
+resultEl.textContent = "Sorteando..."
+
+setTimeout(() => {
+  resultEl.textContent = numbers.join(", ")
+}, 1000)
+
+
 })
+
