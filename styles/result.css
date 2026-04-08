@@ -1,0 +1,134 @@
+.result {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  
+}
+#result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.result h2 {
+justify-content: center;
+}
+
+.result p {
+  font: var(--overline);
+  color: var(--content-secondary);
+}
+
+.content-number {
+display: flex;
+margin: 40px ;
+justify-content: center;
+
+}
+
+
+
+.number-wrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.number {
+
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 22px 18px;
+border-radius: 28px;
+font: var(--font-result);
+color: var(--color-inverse);
+position: relative;
+z-index: 2;
+opacity: 1;
+}
+
+.number-bg {
+position: absolute;
+background: var(--content-brand);
+border-radius: 28px;
+inset: 0;
+z-index: 1;
+
+opacity: 0; /*REMOVE PRA VER*/
+transform: scale(0.9) rotate(-10deg);
+}
+
+.number-bg.show {
+  animation: popBg 6s forwards;
+}
+
+
+@keyframes popBg {
+ 
+  0% {
+    transform: scale(0.5) rotate(0deg);
+    opacity: 0;
+  }
+
+  
+  20% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1) rotate(360deg);
+    opacity: 1;
+  }
+
+
+  100% { 
+    transform: scale(1) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+
+
+
+@keyframes numberColor {
+  
+  0% {
+    color: var(--color-inverse);
+  }
+  80% {
+    color: var(--color-inverse);
+  }
+  100% {
+    color: var(--content-brand);
+  }
+}
+
+
+.number.animate {
+  animation: numberColor 4s ease forwards;
+}
+
+
+@keyframes numberEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+/*remove pra ver*/
+.number-wrapper.animation {
+  animation: pop 6s ease forwards;
+}

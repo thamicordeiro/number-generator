@@ -2,7 +2,7 @@ const number = document.getElementById("number")
 const min = document.getElementById("min")
 const max = document.getElementById("max")
 const message = document.getElementById("message")
-
+const resultSection = document.getElementById("result-section")
 const form = document.querySelector("form")
 const button = document.querySelector(".btn-primary")
 
@@ -73,16 +73,51 @@ if (noRepeat.checked && amount > totalAvailable) {
   numbers = withRepetition(amount, minValue, maxValue)
  }
  
+form.style.display = "none"
+resultSection.style.display = "block"
+
+resultSection.classList.add("animation")
+
 const resultEl = document.getElementById("result")
 
-resultEl.textContent = ""
+resultEl.innerHTML = ""
 
-resultEl.textContent = "Sorteando..."
+numbers.forEach((num, index) => {
+  const wrapper = document.createElement("div")
+  wrapper.classList.add("number-wrapper")
 
+  const bg = document.createElement("div")
+  bg.classList.add("number-bg")
+
+  const span = document.createElement("span")
+  span.classList.add("number")
+  span.textContent = ""
+
+  wrapper.appendChild(bg)
+  wrapper.appendChild(span)
+  resultEl.appendChild(wrapper)
+
+const timeTotal = 6000
+const delay = index * timeTotal
+
+const tempoAparecerBg = 1200 // 20% de 6s
+
+// BG começa
 setTimeout(() => {
-  resultEl.textContent = numbers.join(", ")
-}, 1000)
+  bg.classList.add("show")
+}, delay)
+
+// número entra DEPOIS que o BG apareceu
+setTimeout(() => {
+  wrapper.classList.add("animate")
+  span.textContent = num
+  span.classList.add("animate")
+  wrapper.classList.add("animation")
+}, delay + tempoAparecerBg)
+ 
+}
+
+ )})
 
 
-})
 
