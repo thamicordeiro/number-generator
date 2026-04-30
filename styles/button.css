@@ -1,6 +1,6 @@
 button {
 
-  font: var(--label-md);
+  font: var(--label-sm);
   color: var(--content-primary);
   background-color: var(--background-tertiary);
  

@@ -11,17 +11,18 @@ align-items: center;
 }
 
 .container {
+
 display: grid;
 grid-template-columns: 1fr 1fr;
 grid-template-areas: 
 " info  form"
-"questions  form";
+"questions  form"; 
+align-items: center;
 column-gap: 108px;
 row-gap: 38px;
 margin: auto;
 width: min(1200px, 100%);
-max-width: 100%;
-
+max-width: 100%; 
 
 
 background-color: var(--color-inverse);
@@ -40,6 +41,7 @@ background-color: var(--color-inverse);
 .questions {
   grid-area: questions;
 }
+
 
 p {
 font: var(--text-sm);

@@ -5,6 +5,8 @@ const message = document.getElementById("message")
 const resultSection = document.getElementById("result-section")
 const form = document.querySelector("form")
 const button = document.querySelector(".btn-primary")
+const resultEl = document.getElementById("result")
+const newDrawBtn = document.getElementById("new-draw")
 
 function withRepetition (qtd, min, max) {
 
@@ -47,22 +49,30 @@ message.textContent = ""
  if (!number.value || !min.value || !max.value) {
   
   message.textContent = "Preencha todos os campos."
+  message.classList.add("error")
+  message.classList.remove("success")
   return
 }
 
 if (maxValue <= minValue) {
   message.textContent = "Digite um valor maior que o mínimo."
+  message.classList.add("error")
+  message.classList.remove("success")
   return
 }
 
 if ( amount <=0 ) {
   message.textContent = "A quantidade deve ser maior que zero."
+  message.classList.add("error")
+  message.classList.remove("success")
   return
 }
 
 
 if (noRepeat.checked && amount > totalAvailable) {
   message.textContent = "A quantidade não pode ser maior que o intervalo.";
+  message.classList.remove("success")
+  message.classList.add("error")
   return;
 }
 
@@ -78,9 +88,16 @@ resultSection.style.display = "block"
 
 resultSection.classList.add("animation")
 
-const resultEl = document.getElementById("result")
+newDrawBtn.classList.remove("show")
 
 resultEl.innerHTML = ""
+
+if (numbers.length >= 10)  {
+resultEl.classList.add("scroll")
+} else {
+resultEl.classList.remove("scroll")
+}
+
 
 numbers.forEach((num, index) => {
   const wrapper = document.createElement("div")
@@ -97,17 +114,16 @@ numbers.forEach((num, index) => {
   wrapper.appendChild(span)
   resultEl.appendChild(wrapper)
 
-const timeTotal = 6000
+const timeTotal = 4000
 const delay = index * timeTotal
 
 const tempoAparecerBg = 1200 // 20% de 6s
 
-// BG começa
 setTimeout(() => {
   bg.classList.add("show")
 }, delay)
 
-// número entra DEPOIS que o BG apareceu
+
 setTimeout(() => {
   wrapper.classList.add("animate")
   span.textContent = num
@@ -116,8 +132,35 @@ setTimeout(() => {
 }, delay + tempoAparecerBg)
  
 }
+)
+const totalAnimacao = (numbers.length * 4000) + 1200
 
- )})
+setTimeout(() => {
+  
+  newDrawBtn.classList.add("show")
+  message.textContent = "Sorteio realizado com sucesso!"  
+  message.classList.add("success")
+
+  setTimeout(() => {
+ message.textContent = ""
+ message.classList.remove("sucess")
+  }, 3000)
+}, totalAnimacao)
+
+})
+
+newDrawBtn.addEventListener ( "click", () =>  {
+
+  form.style.display = "block"
+  
+  resultSection.style.display = "none"
+
+  resultEl.innerHTML = ""
+
+  message.textContent = ""
+  message.classList.remove("show", "success", "error")
+
+})
 
 
 

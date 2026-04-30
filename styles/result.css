@@ -1,10 +1,13 @@
 .result {
+  margin-top: 40px;
   display: none;
   flex-direction: column;
   align-items: center;
   text-align: center;
   
+
 }
+
 #result {
   display: flex;
   justify-content: center;
@@ -13,6 +16,12 @@
 
   gap: 24px;
   margin-top: 40px;
+  
+}
+
+#result.scroll {
+  max-height: 400px;
+  overflow-y: auto;
 }
 
 .result h2 {
@@ -29,12 +38,13 @@ display: flex;
 margin: 40px ;
 justify-content: center;
 
-}
+ }
 
-
-
-.number-wrapper {
+ .number-wrapper {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100px;
   height: 100px;
 }
@@ -46,7 +56,7 @@ align-items: center;
 justify-content: center;
 padding: 22px 18px;
 border-radius: 28px;
-font: var(--font-result);
+font: var(--font-black);
 color: var(--color-inverse);
 position: relative;
 z-index: 2;
@@ -59,13 +69,12 @@ background: var(--content-brand);
 border-radius: 28px;
 inset: 0;
 z-index: 1;
-
-opacity: 0; /*REMOVE PRA VER*/
+opacity: 0; 
 transform: scale(0.9) rotate(-10deg);
 }
 
 .number-bg.show {
-  animation: popBg 6s forwards;
+  animation: popBg 4s forwards;
 }
 
 
@@ -93,9 +102,7 @@ transform: scale(0.9) rotate(-10deg);
     opacity: 0;
   }
 }
-
-
-
+ 
 
 @keyframes numberColor {
   
@@ -105,6 +112,11 @@ transform: scale(0.9) rotate(-10deg);
   80% {
     color: var(--color-inverse);
   }
+
+  99% {
+    color: var(--color-inverse);
+  }
+
   100% {
     color: var(--content-brand);
   }
@@ -112,8 +124,9 @@ transform: scale(0.9) rotate(-10deg);
 
 
 .number.animate {
-  animation: numberColor 4s ease forwards;
+  animation: numberColor 2s ease forwards;
 }
+
 
 
 @keyframes numberEnter {
@@ -128,7 +141,18 @@ transform: scale(0.9) rotate(-10deg);
 
 }
 
-/*remove pra ver*/
+
 .number-wrapper.animation {
-  animation: pop 6s ease forwards;
+  animation: pop 3s ease forwards;
+}
+
+#new-draw {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#new-draw.show {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s ease;
 }

@@ -13,6 +13,7 @@ display: grid;
 grid-template-columns: repeat(6, 1fr);
 text-align: center;
 
+
 }
 
 .content-form p {
@@ -22,6 +23,7 @@ text-align: center;
 .content-form {
   grid-area: form;
   grid-row: 1 / 3;
+  
 }
 
 label {
@@ -124,16 +126,29 @@ opacity: 0.7;
 }
 
 .message {
-  font-size: 1.4rem;
-  margin-top: 1rem;
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111;
+  color: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+  opacity: 0;
+  font-size: 16px;
+  margin-top: 16px;
+
+ 
 }
 
 .message.error {
+  opacity: 1;
   color: red;
 }
 
 .message.success {
   color: green;
+    opacity: 1;
 }
 
 @media (max-width: 1024px) {
